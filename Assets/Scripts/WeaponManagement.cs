@@ -9,9 +9,11 @@ public class WeaponManagement : MonoBehaviour
     public Transform[] weaponslots;
     public bool[] slotTaken;
     public int weaponType, activeWeapon;
+    public float timeBetweenShots;
+    float waitTime;
     
     public void Update(){
-        if(Input.GetButtonDown("Fire1")){
+        if(Input.GetButtonDown("Fire1") && waitTime <= 0){
             int i = 0;
             foreach(GameObject obj in currentWeapons){
                 if(obj == null){
@@ -22,12 +24,17 @@ public class WeaponManagement : MonoBehaviour
                 Debug.Log("The array isn't null.");
                 CheckWeapon();
                 currentWeapons[activeWeapon].GetComponent<Weapon>().Fire();
+                waitTime = timeBetweenShots;
                 activeWeapon++;
                 if(activeWeapon == currentWeapons.Length){
                 activeWeapon = 0;
                 }
             }           
         }
+    }
+
+    public void FixedUpdate(){
+        waitTime -= Time.deltaTime;
     }
     
     public void SetWeapon(int weapon){

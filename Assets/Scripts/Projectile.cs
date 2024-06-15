@@ -4,34 +4,44 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    public float speed, waitTime, lifeTime;
-    public bool isCharge;
+    public float distance;
+    public float Speed;
+    public float lifeTime;
+    public LayerMask WhatIsSolid;
     public int damage;
-
-    // Update is called once per frame
-    void Update()
+    public bool EnemyProjectile;
+    public float waitTime;
+    //public GameObject destroyEffect;
+    private void Start()
     {
-        lifeTime -= Time.deltaTime;
-        if(waitTime > 0)
-        {
-            waitTime -= Time.deltaTime;
-        }
-        else
-        {
-            transform.Translate(0f, speed, 0f);
-        }
-        if (lifeTime <= 0)
-        {
-            Destroy(this.gameObject);
-        }
+        Invoke("DestroyProjectile", lifeTime);
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void Update()
     {
-        if (collision.tag == "Enemy" && isCharge == false)
+
+        waitTime -= Time.deltaTime;
+        RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, transform.up, distance, WhatIsSolid);
+        if (hitInfo.collider != null)
         {
-            collision.GetComponent<EnemyHealth>().TakeDamage(damage);
-            Destroy(this.gameObject);
+            
+            if (EnemyProjectile == false)
+            {
+                if (hitInfo.collider.CompareTag("Enemy"))
+                {
+                    hitInfo.collider.GetComponent<EnemyHealth>().TakeDamage(damage);
+                }
+            }
+            DestroyProjectile();
         }
+        if (waitTime <= 0)
+        {
+            transform.Translate(Vector2.up * Speed * Time.deltaTime);
+        }
+        
+    }
+    public void DestroyProjectile()
+    {
+        //Instantiate(destroyEffect, transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 }
