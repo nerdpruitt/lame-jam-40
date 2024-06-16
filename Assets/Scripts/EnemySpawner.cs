@@ -2,11 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemySpawner : MonoBehaviour
 {
     public Transform[] spawnPoints;
     public GameObject Asteroid1, Asteroid2, Asteroid3, UFO, Alien;
+    public Text waveText;
     public GameObject[] aliveEnemies;
     public int waveNum, enemyNum, increment;
     public float waitTime;
@@ -36,6 +38,7 @@ public class EnemySpawner : MonoBehaviour
 
     public void NewWave(){
         waveNum++;
+        waveText.text = "Wave " + waveNum.ToString();
         enemyNum += increment;
         Debug.Log("Wave " + waveNum);
         StartCoroutine(Spawn(enemyNum));

@@ -3247,6 +3247,7 @@ MonoBehaviour:
   Asteroid3: {fileID: 132655079988946212, guid: f7bae2ddfd9683a46b9156553fe0ab14, type: 3}
   UFO: {fileID: 4457495764892947369, guid: 7f2a63eaf4cdd1a4cba8e2d5441503e1, type: 3}
   Alien: {fileID: 7673203818423722788, guid: 3494620c4d3e74d47acdb2299dea6ab4, type: 3}
+  waveText: {fileID: 1692116284}
   aliveEnemies: []
   waveNum: 0
   enemyNum: 5
@@ -3429,7 +3430,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: WaveNumber
+  m_Text: Wave 1
 --- !u!222 &1692116285
 CanvasRenderer:
   m_ObjectHideFlags: 0
