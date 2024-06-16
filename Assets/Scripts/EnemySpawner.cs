@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,7 +6,7 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     public Transform[] spawnPoints;
-    public GameObject Normal, Path, Shooter;
+    public GameObject Asteroid1, Asteroid2, Asteroid3, UFO, Alien;
     public GameObject[] aliveEnemies;
     public int waveNum, enemyNum, increment;
     public float waitTime;
@@ -27,15 +28,16 @@ public class EnemySpawner : MonoBehaviour
                 }
             }
             if(i >= aliveEnemies.Length){
+                canDie = false;
                 Invoke("NewWave", 5);
             }
         }       
     }
 
     public void NewWave(){
-        canDie = false;
         waveNum++;
         enemyNum += increment;
+        Debug.Log("Wave " + waveNum);
         StartCoroutine(Spawn(enemyNum));
     }
 
@@ -43,18 +45,31 @@ public class EnemySpawner : MonoBehaviour
         int i = 0;
         while(i < repeat){
             yield return new WaitForSeconds(waitTime);
-            int spawn = Random.Range(1, spawnPoints.Length);
-            int choose = Random.Range(1, 4);
+            int spawn = UnityEngine.Random.Range(1, spawnPoints.Length);
+            int choose = UnityEngine.Random.Range(1, 4);
+            Array.Resize(ref aliveEnemies, enemyNum);
+            Debug.Log("Spawning");
             if(choose == 1){
-                Instantiate(Normal, spawnPoints[spawn].position, spawnPoints[spawn].rotation);
+                int r = UnityEngine.Random.Range(1, 4);
+                if(r == 1){
+                    aliveEnemies[i] = Instantiate(Asteroid1, spawnPoints[spawn].position, spawnPoints[spawn].rotation);
+                }
+                else if (r == 2){
+                    aliveEnemies[i] = Instantiate(Asteroid2, spawnPoints[spawn].position, spawnPoints[spawn].rotation);
+                }
+                else if (r == 3){
+                    aliveEnemies[i] = Instantiate(Asteroid3, spawnPoints[spawn].position, spawnPoints[spawn].rotation);
+                }
+                
             }
             else if(choose == 2){
-                Instantiate(Path, spawnPoints[spawn].position, spawnPoints[spawn].rotation);
+                aliveEnemies[i] = Instantiate(UFO, spawnPoints[spawn].position, spawnPoints[spawn].rotation);
             }
             else if(choose == 3){
-                Instantiate(Shooter, spawnPoints[spawn].position, spawnPoints[spawn].rotation);
+                aliveEnemies[i] = Instantiate(Alien, spawnPoints[spawn].position, spawnPoints[spawn].rotation);
             }
             i++;
+            Debug.Log("Repeating");
         }
         canDie = true;        
     }

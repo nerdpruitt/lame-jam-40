@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4457495764892947375}
   - component: {fileID: 4457495764892947374}
-  - component: {fileID: 4457495764892947373}
   - component: {fileID: 4457495764892947372}
   - component: {fileID: 4457495764892947371}
   - component: {fileID: 4457495764892947370}
   - component: {fileID: 4457495764892947376}
+  - component: {fileID: 5135745323538199055}
   m_Layer: 10
   m_Name: Enemy 1
   m_TagString: Enemy
@@ -78,8 +78,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 29c3adf85a7270944a7287d46fc65097, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -89,32 +89,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &4457495764892947373
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4457495764892947369}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!50 &4457495764892947372
 Rigidbody2D:
   serializedVersion: 4
@@ -148,7 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f2322b870f6d5a4d8b04c9d8f419311, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 3
+  maxHealth: 2
   health: 0
 --- !u!114 &4457495764892947370
 MonoBehaviour:
@@ -162,7 +136,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a08ff6af9027b24396102f6e6fc2dfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.5
+  speed: 1.2
+  lifeTime: 0
+  OneTarget: 0
+  point: {fileID: 0}
 --- !u!114 &4457495764892947376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,3 +153,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+--- !u!70 &5135745323538199055
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4457495764892947369}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0000031074178, y: -0.06690586}
+  m_Size: {x: 2.0807097, y: 1.0559402}
+  m_Direction: 1
