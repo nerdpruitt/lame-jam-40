@@ -21,7 +21,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (health <= 0)
         {
-            //SceneManager.LoadScene("LoseScreen");
+            SceneManager.LoadScene("MainMenu");
             Destroy(this.gameObject);
         }
         if(health > maxHealth){
