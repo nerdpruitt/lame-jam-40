@@ -104,7 +104,7 @@ MonoBehaviour:
   WhatIsSolid:
     serializedVersion: 2
     m_Bits: 1024
-  damage: 1
+  damage: 2
   EnemyProjectile: 0
   tracking: 0
   doesTrack: 1

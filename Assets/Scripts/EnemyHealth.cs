@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    public int maxHealth, health;
+    public int maxHealth, health, scrapAmount;
+    public PlayerHealth player;
     //public float invincibleTime;
    // float timer;
     //bool isInvincible;
@@ -15,7 +16,16 @@ public class EnemyHealth : MonoBehaviour
     public void Start()
     {
         health = maxHealth;
+        Debug.Log("Finding Player");
+        player = GameObject.FindObjectOfType<PlayerHealth>();
+        Debug.Log("Finished.");
     }
+
+    //public void FixedUpdate(){
+    //    if(player == null){
+    //        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
+    //    }
+    //}
 
     public void TakeDamage(int damage)
     {
@@ -33,23 +43,10 @@ public class EnemyHealth : MonoBehaviour
            // }
             if(health <= 0)
             {
+                player.AddMoney(scrapAmount);
                 Destroy(this.gameObject);
             }
         //}
     }
 
-    //public void Update(){
-     //   if (timer > 0)
-      //  {
-     //       timer -= Time.deltaTime;
-     //   }
-      //  else if (isInvincible == true)
-     //   {
-      //      isInvincible = false;
-      //  }
-    //}
-   // public void HealthUpdate()
-   // {
-   //     healthbar.value = health;
-   // }
 }

@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy 1 1 Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 5686936136727503330, guid: 066d7b605bb37df4589a5091f761d697, type: 3}
+      propertyPath: scrapAmount
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5686936136727503331, guid: 066d7b605bb37df4589a5091f761d697, type: 3}
       propertyPath: lifeTime
       value: 4

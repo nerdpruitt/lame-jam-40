@@ -150,6 +150,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 2
   health: 0
+  scrapAmount: 30
+  player: {fileID: 0}
 --- !u!114 &7673203818423722791
 MonoBehaviour:
   m_ObjectHideFlags: 0

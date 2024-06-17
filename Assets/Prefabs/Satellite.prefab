@@ -154,7 +154,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3034691551448599163}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -312,10 +312,11 @@ MonoBehaviour:
   - {fileID: 3034691552027738067}
   - {fileID: 3034691551874320759}
   - {fileID: 3034691550669315797}
+  playerWallet: {fileID: 0}
   slotTaken: 0000000000000000
   weaponType: 0
   activeWeapon: 0
-  timeBetweenShots: 1
+  timeBetweenShots: 0.5
 --- !u!114 &3034691551448599164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -331,8 +332,10 @@ MonoBehaviour:
   health: 10
   maxHealth: 10
   invinceTime: 2
+  scrap: 100
   invincColor: {r: 1, g: 1, b: 1, a: 0.59607846}
   healthBar: {fileID: 0}
+  scrapText: {fileID: 0}
 --- !u!50 &3034691551448599043
 Rigidbody2D:
   serializedVersion: 4

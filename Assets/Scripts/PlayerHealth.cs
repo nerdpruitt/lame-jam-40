@@ -7,9 +7,10 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int health, maxHealth, invinceTime;
+    public int health, maxHealth, invinceTime, scrap;
     public Color invincColor;
     public Slider healthBar;
+    public Text scrapText;
     //public AudioSource hurtSound;
     public void Start(){
         healthBar.maxValue = maxHealth;
@@ -39,5 +40,13 @@ public class PlayerHealth : MonoBehaviour
     public void Reenable(){
         this.gameObject.GetComponent<Collider2D>().enabled = true;
         this.gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+    }
+    public void AddMoney(int amount){
+        scrap += amount;
+        scrapText.text = "Scrap: " + scrap.ToString();
+    }
+    public void LoseMoney(int amount){
+        scrap -= amount;
+        scrapText.text = "Scrap: " + scrap.ToString();
     }
 }
