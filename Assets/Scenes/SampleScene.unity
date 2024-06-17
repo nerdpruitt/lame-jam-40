@@ -14436,6 +14436,10 @@ PrefabInstance:
       value: Satellite
       objectReference: {fileID: 0}
     - target: {fileID: 3034691551448599164, guid: 2cd5a814dc1109242a1645af87e2779e, type: 3}
+      propertyPath: hitsound
+      value: 
+      objectReference: {fileID: 3034691550831238724}
+    - target: {fileID: 3034691551448599164, guid: 2cd5a814dc1109242a1645af87e2779e, type: 3}
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1328841856}
@@ -14539,5 +14543,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3034691550831238726, guid: 2cd5a814dc1109242a1645af87e2779e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2cd5a814dc1109242a1645af87e2779e, type: 3}
+--- !u!82 &3034691550831238724 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 3034691550831238725, guid: 2cd5a814dc1109242a1645af87e2779e, type: 3}
+  m_PrefabInstance: {fileID: 3034691550831238723}
+  m_PrefabAsset: {fileID: 0}
