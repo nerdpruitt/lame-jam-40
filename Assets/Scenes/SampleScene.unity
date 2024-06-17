@@ -3799,7 +3799,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Tesla - 200
+  m_Text: Tesla - 300
 --- !u!222 &395827837
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3955,7 +3955,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Tesla - 200
+  m_Text: Tesla - 300
 --- !u!222 &434520068
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9689,7 +9689,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Tesla - 200
+  m_Text: Tesla - 300
 --- !u!222 &1571107233
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9769,7 +9769,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Tesla - 200
+  m_Text: Tesla - 300
 --- !u!222 &1594400107
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9997,7 +9997,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Tesla - 200
+  m_Text: Tesla - 300
 --- !u!222 &1683658750
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10319,7 +10319,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Tesla - 200
+  m_Text: Tesla - 300
 --- !u!222 &1697510151
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10994,7 +10994,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Tesla - 200
+  m_Text: Tesla - 300
 --- !u!222 &1780514912
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12106,7 +12106,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Tesla - 200
+  m_Text: Tesla - 300
 --- !u!222 &1928658894
 CanvasRenderer:
   m_ObjectHideFlags: 0
