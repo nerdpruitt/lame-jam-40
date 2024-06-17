@@ -13,8 +13,10 @@ public class Weapon : MonoBehaviour
     public WeaponType weaponType;
     public int maxShots, currentShots;
     public float betweenShots;
+    public AudioSource shootsound;
 
     public void Fire(){
+        shootsound.Play();
         if(weaponType == WeaponType.Machine || weaponType == WeaponType.Tesla){
             if (currentShots < maxShots){
                 Invoke("Shoot", betweenShots);                

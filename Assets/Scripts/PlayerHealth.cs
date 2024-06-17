@@ -11,6 +11,7 @@ public class PlayerHealth : MonoBehaviour
     public Color invincColor;
     public Slider healthBar;
     public Text scrapText;
+    public AudioSource hitsound;
     //public AudioSource hurtSound;
     public void Start(){
         healthBar.maxValue = maxHealth;
@@ -32,10 +33,10 @@ public class PlayerHealth : MonoBehaviour
     {
         health -= damage;
         healthBar.value = health;
-        //hurtSound.Play();
         this.gameObject.GetComponent<Collider2D>().enabled = false;
         this.gameObject.GetComponent<SpriteRenderer>().color = invincColor;
         Invoke("Reenable", invinceTime);
+        hitsound.Play();
     }
     public void Reenable(){
         this.gameObject.GetComponent<Collider2D>().enabled = true;

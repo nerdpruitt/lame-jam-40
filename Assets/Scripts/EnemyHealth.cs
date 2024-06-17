@@ -7,6 +7,7 @@ public class EnemyHealth : MonoBehaviour
 {
     public int maxHealth, health, scrapAmount;
     public PlayerHealth player;
+    public AudioSource death;
     //public float invincibleTime;
    // float timer;
     //bool isInvincible;
@@ -44,6 +45,7 @@ public class EnemyHealth : MonoBehaviour
             if(health <= 0)
             {
                 player.AddMoney(scrapAmount);
+                death.Play();
                 Destroy(this.gameObject);
             }
         //}
